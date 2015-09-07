@@ -72,10 +72,10 @@ console.assert(maxOfArray([10,9,8,100,7,6]) === 100)
 
 function isVowel(symbol){
     // YOUR CODE HERE
-    symbol = String(symbol).toLowerCase();
+    newSymbol = String(symbol).toLowerCase();
     var vowels = "aeiou";
     for (i = 0; i < vowels.length; i++) {
-    	if (symbol === vowels[i]) {
+    	if (newSymbol === vowels[i]) {
     		return true;
     	}
     }
@@ -102,15 +102,15 @@ console.assert(isVowel("E") === true);
 
 function rovarspraket(language){
     // YOUR CODE HERE
-    language = String(language).toLowerCase();
+    rLanguage = String(language).toLowerCase();
     var result = "";
     var consonants = "bcdfghjklmnpqrstvwxyz";
 
-    for (i = 0; i < language.length; i++) {
-        if (consonants.indexOf(language[i]) !== -1) {
-            result += language[i] + "o" + language[i];
+    for (i = 0; i < rLanguage.length; i++) {
+        if (consonants.indexOf(rLanguage[i]) !== -1) {
+            result += rLanguage[i] + "o" + rLanguage[i];
         } else {
-            result += language[i];
+            result += rLanguage[i];
         }
     }
     return result;
@@ -155,16 +155,16 @@ console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew
 
 function findLongestWord(sentence){
     // YOUR CODE HERE
-    sentence = sentence.split(" ");
-    var result = "\'";
+    newSentence = sentence.split(" ");
+    var result = "";
 
-    for (i = 0; i < sentence.length; i++) {   
-        if (sentence[i].length > result.length) {
-           result = sentence[i];
+    for (i = 0; i < newSentence.length; i++) {   
+        if (newSentence[i].length > result.length) {
+           result = newSentence[i].replace(/\'/g, "");
         }
     }
     return result;
 }
 
 console.assert(findLongestWord("book dogs") === "book")
-console.assert(findLongestWord("dont mess with Texas") === "Texas")
+console.assert(findLongestWord("don't mess with Texas") === "Texas")
